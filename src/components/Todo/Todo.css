@@ -1,0 +1,33 @@
+.todo{
+    border-bottom: 1px solid hsl(233, 14%, 35%);
+    padding: 0 1rem;
+}
+
+.content{
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: hsl(234, 39%, 85%);
+    
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.removeButton{
+    position: absolute;
+    right: 0;
+    border: none;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 1rem;
+    color: hsl(233, 14%, 35%);
+    transition: .2s ease;
+    cursor: pointer;
+}
+
+.removeButton:hover{
+    color: hsl(236, 33%, 92%);
+}
+
+
+
