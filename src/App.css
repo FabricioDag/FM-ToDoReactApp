@@ -42,14 +42,48 @@ body{
 }
 
 .bottomArea{
-    background-color:hsl(235, 24%, 19%);
+    background-color:transparent;
     border-radius: .3rem;
+    filter: drop-shadow(0px 12px 20px #000000a4);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem
 }
 
 .todoListContainer{
     overflow-Y: scroll;
     max-height: 400px;
+    border-radius: .3rem;
+    background-color:hsl(235, 24%, 19%);
 }
+
+.actionsArea{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 1rem;
+    font-weight: bold;
+    font-size: 14px;
+    color: hsl(234, 11%, 52%);
+    border-radius: .3rem;
+    background-color:hsl(235, 24%, 19%);
+}
+
+
+.filters{
+    display: flex;
+    gap: 1rem;
+}
+
+.filters a{
+    cursor: pointer;
+    transition: .2 ease;
+}
+
+.filters a:hover{
+    color: hsl(236, 33%, 92%);
+}
+
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -68,3 +102,8 @@ body{
     background: #555;
   }
 
+  @media (min-width: 600px){
+    .bottomArea{
+        background-color:hsl(235, 24%, 19%);
+    }
+  }

@@ -1,5 +1,4 @@
 import React from 'react'
-import './Actionsarea.css'
 
 const Actionsarea = ({filter, setFilter, arrLen}) => {
 
