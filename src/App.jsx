@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 import Todo from './components/Todo/Todo.jsx'
@@ -69,9 +69,15 @@ function App() {
       "isCompleted": false
     }
     
-    
-    
   ])
+
+  useEffect(() => {
+    // Recupera as tarefas salvas no localStorage quando o componente é montado
+    const savedTodos = localStorage.getItem('todos');
+    if (savedTodos) {
+      setTodos(JSON.parse(savedTodos));
+    }
+  }, []);
 
   const [value,setValue] = useState("")
 
@@ -99,6 +105,7 @@ function App() {
     }]
 
     setTodos(newTodos)
+    localStorage.setItem('todos', JSON.stringify(newTodos));
 
   }
 
@@ -129,20 +136,21 @@ function App() {
       
       
       </div>
-
-      <div className="todoListContainer">
-        
-        {todos
-          .filter((todo) =>filter === "All"? true: filter === "Completed"? todo.isCompleted : !todo.isCompleted)
-          .map((todo) => (
+      <div className="bottomArea">
+        <div className="todoListContainer">
           
-          <Todo key={todo.id} todo={todo} removeTodo={removeTodo} completeTodo={completeTodo} />
+          {todos
+            .filter((todo) =>filter === "All"? true: filter === "Completed"? todo.isCompleted : !todo.isCompleted)
+            .map((todo) => (
+            
+            <Todo key={todo.id} todo={todo} removeTodo={removeTodo} completeTodo={completeTodo} />
 
-        ))}
+          ))}
 
+          
+        </div>
         <Actionsarea filter={filter} setFilter={setFilter} arrLen={todos.length}/>
-      </div>
-          
+      </div>    
     </div>
   )
 }

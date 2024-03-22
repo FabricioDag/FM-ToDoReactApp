@@ -1,5 +1,7 @@
 import React from 'react'
 import './Todo.css'
+import iconCheck from '../Todo/icon-check.svg'
+import iconCross from '../Todo/icon-cross.svg'
 
 const todo = ({todo, removeTodo, completeTodo}) => {
   return (
@@ -9,11 +11,11 @@ const todo = ({todo, removeTodo, completeTodo}) => {
       <div className="content">
         
         <button className={todo.isCompleted? "circle completed" : "circle"} onClick={()=> completeTodo(todo.id)}>
-          <img className='iconCheck' src="../src/assets/Images/icon-check.svg"/>
+          <img className='iconCheck' src={iconCheck}/>
         </button>
-        <p style={{color: todo.isCompleted ? "red" : "", textDecoration: todo.isCompleted ? "line-through" : "" }}>{todo.text}</p>
+        <p style={{opacity: todo.isCompleted ? ".2" : "", textDecoration: todo.isCompleted ? "line-through" : "" }}>{todo.text}</p>
 
-        <button className="removeButton" onClick={()=> removeTodo(todo.id)}> <img src="./src/assets/Images/icon-cross.svg" alt="" /> </button>
+        <button className="removeButton" onClick={()=> removeTodo(todo.id)}> <img src={iconCross} alt="" /> </button>
       </div>
       
     </div>

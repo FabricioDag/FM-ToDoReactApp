@@ -41,11 +41,30 @@ body{
     color: white;
 }
 
-.todoListContainer{
+.bottomArea{
     background-color:hsl(235, 24%, 19%);
     border-radius: .3rem;
-
-    /* overflow-Y: scroll;
-    max-height: 600px; */
 }
+
+.todoListContainer{
+    overflow-Y: scroll;
+    max-height: 400px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(235, 24%, 19%);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 

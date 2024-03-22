@@ -23,10 +23,11 @@
     color: hsl(233, 14%, 35%);
     transition: .2s ease;
     cursor: pointer;
+    opacity: .3;
 }
 
-.removeButton:hover{
-    color: hsl(236, 33%, 92%);
+.todo:hover .removeButton{
+    opacity: 1;
 }
 
 
